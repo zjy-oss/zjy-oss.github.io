@@ -3,12 +3,17 @@
 
     <sitemap>
         <loc>http://www.huweihuang.com/post-sitemap.xml</loc>
-        <lastmod>2019-09-07T12:29:43.230Z</lastmod>
+        <lastmod>2019-09-07T12:38:13.459Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://www.huweihuang.com/page-sitemap.xml</loc>
         <lastmod>2019-09-07T11:49:57.294Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://www.huweihuang.com/category-sitemap.xml</loc>
+        <lastmod>2019-09-07T12:38:13.459Z</lastmod>
     </sitemap>
 
     <sitemap>
