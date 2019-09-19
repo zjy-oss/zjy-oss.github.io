@@ -142,14 +142,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -212,35 +212,30 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p><font color="green">在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</font> <br><br>
+                <p><font color="green">在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</font><br>
  这个一个题目最简单的就是依据二位数组的性质，进行循环判断，如果想优化算法可以利用到二分查找<br>
 两种思路<br>
 一种是：<br>
-把每一行看成有序递增的数组，<br>
-利用二分查找，<br>
-通过遍历每一行得到答案，<br>
-时间复杂度是nlogn<br>
-public class Solution {<br>
-public boolean Find(int [][] array,int target) {</p>
-<pre><code>        for(int i=0;i&lt;array.length;i++){
-            int low=0;
-            int high=array[i].length-1;
-            while(low&lt;=high){
-                int mid=(low+high)/2;
-                if(target&gt;array[i][mid])
-                    low=mid+1;
-                else if(target&lt;array[i][mid])
-                    high=mid-1;
-                else
-                    return true;
-            }
-        }
-        return false;
-
-    }
-}
-</code></pre>
-<p>另外一种思路是：<br>
+把每一行看成有序递增的数组，利用二分查找，通过遍历每一行得到答案，时间复杂度是nlogn<br>
+<code>public class Solution {<br>
+		public boolean Find(int [][] array,int target) {<br>
+			for(int i=0; i&lt;array.length; i++) {<br>
+				int low=0;<br>
+				int high=array[i].length-1;<br>
+				while(low&lt;=high) {<br>
+					int mid=(low+high)/2;<br>
+					if(target&gt;array[i][mid])<br>
+						low=mid+1;<br>
+					else if(target&lt;array[i][mid])<br>
+						high=mid-1;<br>
+					else<br>
+						return true;<br>
+				}<br>
+			}<br>
+			return false;<br>
+		}<br>
+}</code><br>
+另外一种思路是：<br>
 利用二维数组由上到下，由左到右递增的规律，<br>
 那么选取右上角或者左下角的元素a[row][col]与target进行比较，<br>
 当target小于元素a[row][col]时，那么target必定在元素a所在行的左边,<br>
