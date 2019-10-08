@@ -63,7 +63,9 @@
     <script></script>
 </head>
 
-
+{% if theme.canvas_nest %}
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+{% endif %}
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
 	<!-- Modified by Yu-Hsuan Yen -->
@@ -134,14 +136,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
